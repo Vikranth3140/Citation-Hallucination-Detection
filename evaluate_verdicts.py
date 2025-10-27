@@ -1,19 +1,25 @@
 # evaluate_verdicts.py
 import json, collections, argparse
 from rapidfuzz import fuzz, process
+import unicodedata, re
+
+def normalize_title(s):
+    s = unicodedata.normalize("NFKC", s)
+    s = re.sub(r"\s+", " ", s).strip().lower()
+    return s
 
 def evaluate(pred_file, gold_file, threshold=85):
     gold = {}
     with open(gold_file, encoding="utf-8") as f:
         for line in f:
             j = json.loads(line)
-            gold[j["title"].strip().lower()] = j["label"]
+            gold[normalize_title(j["title"])] = j["label"]
 
     preds = []
     with open(pred_file, encoding="utf-8") as f:
         for line in f:
             j = json.loads(line)
-            preds.append((j["title"].strip().lower(), j["label"]))
+            preds.append((normalize_title(j["title"]), j["label"]))
 
     cats = ["valid", "partially_valid", "hallucinated"]
     cm = {c: collections.Counter() for c in cats}
