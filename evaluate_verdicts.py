@@ -1,5 +1,5 @@
 # Robust evaluator for Citation Hallucination Detection
-# Handles Unicode normalization, fuzzy matching, and prints summary metrics
+# Handles Unicode normalization, fuzzy matching, prints summary metrics and supports strict and relaxed evaluation modes
 # Usage:
 #   python evaluate_verdicts.py --pred examples.verdicts.jsonl --gold gold.jsonl
 
@@ -16,7 +16,7 @@ def normalize_title(s: str) -> str:
     s = re.sub(r"\s+", " ", s).strip().lower()
     return s
 
-def evaluate(pred_file, gold_file, threshold=85):
+def evaluate(pred_file, gold_file, threshold=85, relaxed=False):
     # Load gold dataset
     gold = {}
     with open(gold_file, encoding="utf-8") as f:
@@ -42,17 +42,23 @@ def evaluate(pred_file, gold_file, threshold=85):
         if match and match[1] >= threshold:
             best_match, score = match[0], match[1]
             gold_label = gold[best_match]
-            cm[gold_label][pred_label] += 1
+
+            # Relaxed mode: treat valid ↔ partially_valid as equivalent
+            if relaxed and {gold_label, pred_label} <= {"valid", "partially_valid"}:
+                cm["valid"]["valid"] += 1
+            else:
+                cm[gold_label][pred_label] += 1
+
             matched += 1
         else:
-            # unmatched prediction
-            pass
+            pass  # unmatched prediction
 
-    print(f"\nMatched {matched}/{len(preds)} predictions ≥ fuzzy threshold {threshold}\n")
+    print(f"\nMatched {matched}/{len(preds)} predictions ≥ fuzzy threshold {threshold}")
+    print(f"Evaluation mode: {'RELAXED' if relaxed else 'STRICT'}\n")
 
-    # Calculate and print metrics
-    macro_p, macro_r, macro_f1 = 0, 0, 0
-    total_tp, total_fp, total_fn = 0, 0, 0
+    # Calculate metrics
+    macro_p = macro_r = macro_f1 = 0
+    total_tp = total_fp = total_fn = 0
 
     print("Per-class metrics:")
     for c in cats:
@@ -82,9 +88,9 @@ def evaluate(pred_file, gold_file, threshold=85):
     print("\nMacro-average:  P={:.2f}  R={:.2f}  F1={:.2f}".format(macro_p, macro_r, macro_f1))
     print("Micro-average:  P={:.2f}  R={:.2f}  F1={:.2f}".format(micro_p, micro_r, micro_f1))
 
-    # Print confusion matrix
+    # Confusion matrix
     print("\nConfusion Matrix:")
-    header = " " * 18 + " ".join(f"{c[:10]:>12}" for c in cats)
+    header = " " * 18 + " ".join(f"{c[:12]:>12}" for c in cats)
     print(header)
     for g in cats:
         row = f"{g[:15]:>15} | " + " ".join(f"{cm[g][p]:12d}" for p in cats)
@@ -95,5 +101,6 @@ if __name__ == "__main__":
     ap.add_argument("--pred", required=True, help="Predictions JSONL file")
     ap.add_argument("--gold", required=True, help="Gold labels JSONL file")
     ap.add_argument("--threshold", type=int, default=85, help="Fuzzy match threshold (0-100)")
+    ap.add_argument("--relaxed", action="store_true", help="Enable relaxed mode (valid ↔ partially_valid interchangeable)")
     args = ap.parse_args()
-    evaluate(args.pred, args.gold, args.threshold)
+    evaluate(args.pred, args.gold, args.threshold, args.relaxed)
