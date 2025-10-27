@@ -16,6 +16,33 @@ from rapidfuzz import fuzz, process
 from rank_bm25 import BM25Okapi
 from tqdm import tqdm
 
+# Try to load a local .env file so OPENROUTER_API_KEY can be provided there.
+# Prefer python-dotenv if installed, otherwise fall back to a tiny parser.
+try:
+    from dotenv import load_dotenv
+    # load .env from repository root (current working dir)
+    load_dotenv()
+except Exception:
+    # fallback: parse a simple KEY=VALUE .env in repo root
+    env_path = os.path.join(os.getcwd(), ".env")
+    if os.path.exists(env_path):
+        try:
+            with open(env_path, "r", encoding="utf-8") as _ef:
+                for ln in _ef:
+                    ln = ln.strip()
+                    if not ln or ln.startswith("#"):
+                        continue
+                    if "=" not in ln:
+                        continue
+                    k, v = ln.split("=", 1)
+                    k = k.strip()
+                    v = v.strip().strip('"').strip("'")
+                    # only set if not already in environment
+                    if k and (k not in os.environ):
+                        os.environ[k] = v
+        except Exception:
+            pass
+
 # ----------------------------
 # Utilities
 # ----------------------------
@@ -55,7 +82,7 @@ class Verdict:
     confidence: float           # 0..1
     matched_source: Optional[str] = None
     matched_id: Optional[str] = None
-    debug: Dict[str, Any] = None
+    debug: Optional[Dict[str, Any]] = None
 
 # ----------------------------
 # Bibliography clients
@@ -291,23 +318,41 @@ class Detector:
             label, conf = ("valid", min(0.85, best["_fuzzy"])) if best["_fuzzy"] >= 0.85 else ("partially_valid", best["_fuzzy"])
             return Verdict(label=label, confidence=conf, matched_source=best["source"], matched_id=best["id"], debug={"picked": best})
 
-        prompt = f"""
-You are validating a bibliographic citation. Decide whether the query citation is:
-- "valid" (title+authors match; year/venue consistent),
-- "partially_valid" (same paper but some metadata off),
-- "hallucinated" (no candidate is actually the same paper).
+        # Build a strict, JSON-only prompt using system + user messages.
+        # We include an explicit JSON schema and require the model to return
+        # exactly one JSON object (no surrounding text or markdown).
+        candidates_for_prompt = [
+            {k: v for k, v in it.items() if k in ["title", "authors", "year", "venue", "source", "id"]}
+            for it in candidates
+        ]
 
-Return JSON with fields: label, confidence (0..1), chosen_index (or -1).
+        system_msg = (
+            "You are an assistant whose ONLY responsibility is to decide whether a bibliographic "
+            "citation matches one of the provided candidate records. You MUST return EXACTLY one JSON object "
+            "and NOTHING ELSE (no explanation, no greetings, no code fences). The JSON object MUST follow this schema:\n"
+            "{\n  \"label\": \"valid|partially_valid|hallucinated\",\n  \"confidence\": <number 0.0-1.0>,\n  \"chosen_index\": <integer index into the Candidates array, or -1 if none>\n}\n"
+            "Rules:\n"
+            "- Only use the three labels: valid, partially_valid, hallucinated.\n"
+            "- If you pick 'valid' or 'partially_valid', chosen_index MUST be 0..(N-1) pointing to the selected candidate.\n"
+            "- If no candidate matches, return label 'hallucinated' and chosen_index -1.\n"
+            "- confidence must be a decimal between 0.0 and 1.0 (two decimal places preferred).\n"
+            "- Do not invent or modify candidate metadata. Base your decision solely on the provided Candidates array and the Query.\n"
+            "- If the model output cannot be expressed following the schema, return: {\"label\":\"hallucinated\",\"confidence\":0.0,\"chosen_index\":-1}."
+        )
 
-Query:
-title="{c.title}"
-authors="{c.author}"
-year="{c.year}"
-venue="{c.venue}"
+        user_msg = (
+            "Here is the query citation and a list of candidates. Carefully compare title and authors first, then year and venue. "
+            "Match criteria guidance (for your internal use): title token overlap and normalized author overlap are primary signals; exact year match or within 1 year increases confidence.\n\n"
+            f"Query:\ntitle={c.title!r}\nauthors={c.author!r}\nyear={c.year!r}\nvenue={c.venue!r}\n\n"
+            "Candidates (array indexed 0..N-1):\n"
+            f"{json.dumps(candidates_for_prompt, indent=2, ensure_ascii=False)}\n\n"
+            "Task: Return ONLY the JSON object described in the system message. Do NOT output any extra text."
+        )
 
-Candidates:
-{json.dumps([{k: v for k,v in it.items() if k in ["title","authors","year","venue","source","id"]} for it in candidates], indent=2)}
-        """.strip()
+        messages = [
+            {"role": "system", "content": system_msg},
+            {"role": "user", "content": user_msg},
+        ]
 
         txt = None
         if getattr(self, "_use_openrouter", False):
@@ -315,7 +360,7 @@ Candidates:
             endpoint = f"{self._openrouter_base}/chat/completions"
             payload = {
                 "model": self._openrouter_model,
-                "messages": [{"role": "user", "content": prompt}],
+                "messages": messages,
                 "temperature": 0
             }
             headers = {
@@ -340,19 +385,24 @@ Candidates:
                 except Exception:
                     txt = json.dumps(jr)
         else:
+            # Some client type-hints are strict about message types; silence
+            # static type warnings by casting to Any at runtime.
+            from typing import Any as _Any
+            messages_param: _Any = messages
             resp = self._openai.chat.completions.create(
                 model=self.openai_model,
-                messages=[{"role": "user", "content": prompt}],
+                messages=messages_param,
                 temperature=0
             )
             # OpenAI client's response shapes differ between versions; handle safely
             try:
                 txt = resp.choices[0].message.content
             except Exception:
+                # fallback to a safe string representation of the response
                 try:
-                    txt = resp.choices[0].text
+                    txt = json.dumps(resp, default=str)
                 except Exception:
-                    txt = json.dumps(resp)
+                    txt = str(resp)
 
         # Robustly extract JSON object from LLM text
         try:
