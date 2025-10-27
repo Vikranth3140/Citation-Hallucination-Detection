@@ -152,19 +152,43 @@ class SemanticScholarClient:
 # ----------------------------
 
 class Detector:
-    def __init__(self, enable_llm: bool = False, openai_model: str = "gpt-4o-mini"):
+    def __init__(self, enable_llm: bool = False, openai_model: str = "https://openrouter.ai/mistralai/mistral-7b-instruct:free"):
         self.crossref = CrossrefClient()
         self.openalex = OpenAlexClient()
         self.semsch = SemanticScholarClient()
         self.enable_llm = enable_llm
         self.openai_model = openai_model
 
+        # LLM configuration: support either the OpenAI-compatible client or
+        # direct OpenRouter usage when the model string points to openrouter.
+        self._use_openrouter = False
+        self._openrouter_model = None
+        self._openrouter_key = None
+        self._openrouter_base = None
+
         if enable_llm:
-            try:
-                from openai import OpenAI
-                self._openai = OpenAI()
-            except Exception as e:
-                raise RuntimeError("Install openai and set OPENAI_API_KEY to use LLM verification.") from e
+            # If the model string references openrouter, wire OpenRouter-specific
+            # endpoint and auth so `--llm` works out of the box with OpenRouter.
+            if "openrouter" in (openai_model or ""):
+                # model may be a full URL like: https://openrouter.ai/mistralai/mistral-7b-instruct:free
+                # extract the model id portion after the host
+                m = openai_model
+                # strip scheme+host if present
+                m = re.sub(r"^https?://[^/]+/", "", m)
+                self._use_openrouter = True
+                self._openrouter_model = m
+                # Accept either OPENROUTER_API_KEY or OPENAI_API_KEY for convenience
+                self._openrouter_key = os.environ.get("OPENROUTER_API_KEY") or os.environ.get("OPENAI_API_KEY")
+                if not self._openrouter_key:
+                    raise RuntimeError("Set OPENROUTER_API_KEY (or OPENAI_API_KEY) in the environment to use OpenRouter.")
+                # Allow overriding base URL if needed (default points to OpenRouter v1 API)
+                self._openrouter_base = os.environ.get("OPENROUTER_BASE", "https://openrouter.ai/v1")
+            else:
+                try:
+                    from openai import OpenAI
+                    self._openai = OpenAI()
+                except Exception as e:
+                    raise RuntimeError("Install openai and set OPENAI_API_KEY to use LLM verification.") from e
 
     # ---- Stage 1: Exact lookup (high precision) ----
     def exact_lookup(self, c: Citation) -> Optional[Dict[str, Any]]:
@@ -285,14 +309,57 @@ Candidates:
 {json.dumps([{k: v for k,v in it.items() if k in ["title","authors","year","venue","source","id"]} for it in candidates], indent=2)}
         """.strip()
 
-        resp = self._openai.chat.completions.create(
-            model=self.openai_model,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0
-        )
-        txt = resp.choices[0].message.content
+        txt = None
+        if getattr(self, "_use_openrouter", False):
+            # Call OpenRouter directly via HTTP (OpenAI-compatible payload)
+            endpoint = f"{self._openrouter_base}/chat/completions"
+            payload = {
+                "model": self._openrouter_model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0
+            }
+            headers = {
+                "Authorization": f"Bearer {self._openrouter_key}",
+                "Content-Type": "application/json"
+            }
+            r = requests.post(endpoint, json=payload, headers=headers, timeout=60)
+            try:
+                r.raise_for_status()
+                jr = r.json()
+            except Exception as e:
+                # network / parsing failed; fallback
+                best = max(candidates, key=lambda x: x["_fuzzy"])
+                return Verdict(label="partially_valid", confidence=min(0.8, best["_fuzzy"]), matched_source=best["source"], matched_id=best["id"], debug={"error": str(e), "http_text": r.text if hasattr(r, 'text') else None})
+
+            # Try common response shapes
+            try:
+                txt = jr.get("choices", [])[0].get("message", {}).get("content")
+            except Exception:
+                try:
+                    txt = jr.get("choices", [])[0].get("text")
+                except Exception:
+                    txt = json.dumps(jr)
+        else:
+            resp = self._openai.chat.completions.create(
+                model=self.openai_model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0
+            )
+            # OpenAI client's response shapes differ between versions; handle safely
+            try:
+                txt = resp.choices[0].message.content
+            except Exception:
+                try:
+                    txt = resp.choices[0].text
+                except Exception:
+                    txt = json.dumps(resp)
+
+        # Robustly extract JSON object from LLM text
         try:
-            parsed = json.loads(re.search(r"\{.*\}", txt, re.S).group(0))
+            m = re.search(r"\{.*\}", txt or "", re.S)
+            if not m:
+                raise ValueError("no json object found in model output")
+            parsed = json.loads(m.group(0))
         except Exception:
             # fallback heuristic if parsing fails
             best = max(candidates, key=lambda x: x["_fuzzy"])
