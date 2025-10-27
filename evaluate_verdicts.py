@@ -1,7 +1,8 @@
 # evaluate_verdicts.py
 import json, collections, argparse
+from rapidfuzz import fuzz, process
 
-def evaluate(pred_file, gold_file):
+def evaluate(pred_file, gold_file, threshold=85):
     gold = {}
     with open(gold_file, encoding="utf-8") as f:
         for line in f:
@@ -17,10 +18,16 @@ def evaluate(pred_file, gold_file):
     cats = ["valid", "partially_valid", "hallucinated"]
     cm = {c: collections.Counter() for c in cats}
 
-    for title, pred in preds:
-        g = gold.get(title)
-        if g:
-            cm[g][pred] += 1
+    gold_titles = list(gold.keys())
+    for title_pred, pred_label in preds:
+        # Find closest gold title using fuzzy matching
+        best_match, score, _ = process.extractOne(title_pred, gold_titles, scorer=fuzz.token_set_ratio)
+        if score >= threshold:
+            gold_label = gold[best_match]
+            cm[gold_label][pred_label] += 1
+        else:
+            # treat as unmatched (ignore or count separately)
+            pass
 
     for c in cats:
         tp = cm[c][c]
@@ -35,5 +42,6 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--pred", default="examples.verdicts.jsonl")
     ap.add_argument("--gold", required=True)
+    ap.add_argument("--threshold", type=int, default=85)
     args = ap.parse_args()
-    evaluate(args.pred, args.gold)
+    evaluate(args.pred, args.gold, args.threshold)
