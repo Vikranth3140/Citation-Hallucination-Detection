@@ -1,0 +1,10 @@
+{"author": "Vaswani A.; Shazeer N.; Parmar N.; Uszkoreit J.; Jones L.; Gomez A. N.; Kaiser Ł.; Polosukhin I.", "title": "Attention Is All You Need", "year": 2017, "venue": "NeurIPS", "label": "valid"}
+{"author": "Smith J.", "title": "A Nonexistent Paper About Transformers", "year": 2021, "venue": "Nature", "label": "hallucinated"}
+{"author": "Brown T.; Mann B.; Ryder N.; Subbiah M.; Kaplan J.; Dhariwal P.; Neelakantan A.; Shyam P.; Sastry G.; Askell A.; Agarwal S.; Herbert-Voss A.; Krueger G.; Henighan T.; Child R.; Ramesh A.; Ziegler D. M.; Wu J.; Winter C.; Hesse C.; Chen M.; Sigler E.; Litwin M.; Gray S.; Chess B.; Clark J.; Berner C.; McCandlish S.; Radford A.; Sutskever I.; Amodei D.", "title": "Language Models are Few-Shot Learners", "year": 2020, "venue": "NeurIPS", "label": "valid"}
+{"author": "Zhang Y.; Sun S.; Balog M.", "title": "Towards Explainable Transformers in NLP", "year": 2021, "venue": "ACL", "label": "partially_valid"}
+{"author": "Johnson M.", "title": "Understanding Transformers Through Visualization", "year": 2022, "venue": "ICLR", "label": "hallucinated"}
+{"author": "Kingma D. P.; Ba J.", "title": "Adam: A Method for Stochastic Optimization", "year": 2015, "venue": "ICLR", "label": "valid"}
+{"author": "Krizhevsky A.; Sutskever I.; Hinton G. E.", "title": "ImageNet Classification with Deep Convolutional Neural Networks", "year": 2012, "venue": "NeurIPS", "label": "valid"}
+{"author": "Nguyen T.; Kim J.", "title": "A Comprehensive Survey on Transformer Architectures", "year": 2023, "venue": "arXiv", "label": "partially_valid"}
+{"author": "Doe J.", "title": "Quantum Transformers for Finance", "year": 2022, "venue": "Nature Physics", "label": "hallucinated"}
+{"author": "LeCun Y.; Bengio Y.; Hinton G.", "title": "Deep Learning", "year": 2015, "venue": "Nature", "label": "valid"}
