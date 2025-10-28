@@ -63,10 +63,10 @@ Citation hallucination occurs when AI systems or automated tools generate plausi
 
 ```bash
 # Run without LLM verification (faster, uses fuzzy matching only)
-python pipeline.py examples.jsonl
+python main.py examples.jsonl
 
 # Run with LLM verification (more accurate, requires API key)
-python pipeline.py examples.jsonl --llm
+python main.py examples.jsonl --llm
 ```
 
 ### Input Format
@@ -251,10 +251,10 @@ The pipeline includes comprehensive error handling:
 
 ```bash
 # Test without LLM (fast)
-python pipeline.py examples.jsonl
+python main.py examples.jsonl
 
 # Test with LLM verification  
-python pipeline.py examples.jsonl --llm
+python main.py examples.jsonl --llm
 
 # Check output
 cat examples.verdicts.jsonl
