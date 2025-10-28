@@ -2,7 +2,7 @@
 # Stages: Exact Lookup → Fuzzy Retrieval → (Optional) LLM Verification
 # Author: Vikranth Udandarao and Nipun Misra
 # Usage:
-#   python pipeline.py examples.jsonl
+#   python main.py examples.jsonl
 # Input format (JSONL): {"author": "First A.; Second B.", "title": "Paper title", "year": 2021, "venue": "Conf/Journal"}
 
 from __future__ import annotations
