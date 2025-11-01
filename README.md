@@ -2,7 +2,7 @@
 
 A robust hybrid pipeline for detecting hallucinated citations in academic papers and research documents. The system combines exact bibliographic lookup, fuzzy matching, and optional LLM verification to classify citations as valid, partially valid, or hallucinated.
 
-## 🎯 Overview
+## Overview
 
 Citation hallucination occurs when AI systems or automated tools generate plausible-looking but non-existent academic references. This pipeline provides a three-stage detection system:
 
@@ -10,7 +10,7 @@ Citation hallucination occurs when AI systems or automated tools generate plausi
 2. **Fuzzy Retrieval** (Stage 2): Semantic similarity and BM25-based candidate retrieval  
 3. **LLM Verification** (Stage 3): Optional AI-powered disambiguation and validation
 
-## ✨ Features
+## Features
 
 - **Multi-Source Bibliographic Search**: Integrates with Crossref, OpenAlex, and Semantic Scholar APIs
 - **Intelligent Matching**: Combines fuzzy string matching, author similarity (Jaccard), and temporal proximity
@@ -19,13 +19,13 @@ Citation hallucination occurs when AI systems or automated tools generate plausi
 - **Environment Configuration**: Automatic `.env` loading for API keys and settings
 - **Configurable Thresholds**: Tunable confidence thresholds for different use cases
 
-## 📊 Classification Labels
+## Classification Labels
 
 - **`valid`**: Citation matches an existing publication with consistent metadata
 - **`partially_valid`**: Same paper found but with minor metadata discrepancies (typos, formatting differences)
 - **`hallucinated`**: No matching publication found in any database
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -57,7 +57,7 @@ Citation hallucination occurs when AI systems or automated tools generate plausi
    OPENROUTER_BASE=https://openrouter.ai/v1
    ```
 
-## 🔧 Usage
+## Usage
 
 ### Basic Usage
 
@@ -111,7 +111,7 @@ The pipeline generates a `.verdicts.jsonl` file with verification results:
 - `matched_id`: Unique identifier from the matched database (DOI, paper ID, etc.)
 - `debug`: Detailed information about the matching process
 
-## ⚙️ Configuration
+## Configuration
 
 ### Model Selection
 
@@ -153,7 +153,7 @@ score = 0.6*title_score + 0.3*auth_score + 0.1*year_match
 agg = 0.5*title_score + 0.3*auth_score + 0.2*year_close
 ```
 
-## 🔍 Examples
+## Examples
 
 ### Example 1: Valid Citation
 ```bash
@@ -198,7 +198,7 @@ agg = 0.5*title_score + 0.3*auth_score + 0.2*year_close
 }
 ```
 
-## 🏗️ Architecture
+## Architecture
 
 ### Stage 1: Exact Lookup
 - Queries Crossref, OpenAlex, and Semantic Scholar APIs
@@ -226,7 +226,7 @@ agg = 0.5*title_score + 0.3*auth_score + 0.2*year_close
   ```
 - Robust error handling with fallback to fuzzy scores
 
-## 🔧 API Integration
+## API Integration
 
 ### Supported Databases
 
@@ -245,7 +245,7 @@ The pipeline includes comprehensive error handling:
 - **Malformed responses**: Robust JSON parsing with fallbacks
 - **Missing fields**: Default values and optional field handling
 
-## 🧪 Testing
+## Testing
 
 ### Run the pipeline on sample data:
 
@@ -277,6 +277,6 @@ python -c "from rapidfuzz import fuzz; from rank_bm25 import BM25Okapi; print('D
 - **Caching**: Consider caching API responses for repeated queries
 - **Parallel processing**: Implement multiprocessing for large datasets
 
-## 📝 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
