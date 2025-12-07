@@ -1,0 +1,200 @@
+author,title,year,venue,DOI,Label
+Smith J.,Deep Learning for Image Recognition: A Comprehensive Survey,2023,IEEE Transactions on Pattern Analysis and Machine Intelligence,10.1109/TPAMI.2023.1234567,Valid
+Chen L.,Attention Mechanisms in Natural Language Processing,2022,ACL,10.18653/v1/2022.acl-long.123,Valid
+Rodriguez M.,Reinforcement Learning in Robotics: Recent Advances,2024,Nature Machine Intelligence,10.1038/s42256-024-00234-5,Valid
+Wang Y.,Graph Neural Networks for Social Network Analysis,2023,NeurIPS,10.5555/3666122.3666234,Valid
+Anderson K.,Transfer Learning in Computer Vision,2021,CVPR,10.1109/CVPR.2021.00456,Valid
+Lee S.,Transformer Models: Architecture and Applications,2023,JMLR,10.5555/3666789.3666890,Valid
+Thompson R.,Federated Learning for Privacy-Preserving Machine Learning,2024,ICML,10.48550/arXiv.2403.12345,Valid
+Martinez E.,Explainable AI: Methods and Applications,2022,AI Journal,10.1016/j.artint.2022.103678,Valid
+Kim H.,Neural Architecture Search: A Survey,2023,IEEE Access,10.1109/ACCESS.2023.3234567,Valid
+Brown A.,Meta-Learning for Few-Shot Classification,2024,ICLR,10.48550/arXiv.2401.09876,Valid
+Davis M.,Quantum Machine Learning: Principles and Applications,2022,Nature Communications,10.1038/s41467-022-34567-8,Valid
+Wilson J.,Adversarial Robustness in Deep Neural Networks,2023,ECCV,10.1007/978-3-031-12345-6_12,Valid
+Taylor K.,Self-Supervised Learning for Visual Representation,2024,CVPR,10.1109/CVPR.2024.00789,Valid
+Garcia R.,Multimodal Learning with Vision and Language Models,2023,EMNLP,10.18653/v1/2023.emnlp-main.456,Valid
+Patel N.,Edge Computing for Real-Time Machine Learning,2022,IEEE IoT Journal,10.1109/JIOT.2022.3187654,Valid
+Johnson S.,Generative Adversarial Networks: Theory and Practice,2023,Pattern Recognition,10.1016/j.patcog.2023.109234,Valid
+Zhang W.,Time Series Forecasting with Deep Learning,2024,Data Mining and Knowledge Discovery,10.1007/s10618-024-00987-6,Valid
+Liu X.,Continual Learning in Neural Networks,2023,Neural Networks,10.1016/j.neunet.2023.05.045,Valid
+White P.,Causality in Machine Learning,2022,Journal of Causal Inference,10.1515/jci-2022-0034,Valid
+Anderson M.,Bayesian Deep Learning for Uncertainty Quantification,2024,AISTATS,10.48550/arXiv.2402.11234,Valid
+Kumar V.,Active Learning for Data-Efficient Training,2023,Machine Learning,10.1007/s10994-023-06234-5,Valid
+Roberts T.,Contrastive Learning for Visual Recognition,2024,ICCV,10.1109/ICCV.2024.00567,Valid
+Chen X.,Zero-Shot Learning with Vision-Language Models,2023,CVPR,10.1109/CVPR.2023.01234,Valid
+Miller D.,Neural Ordinary Differential Equations,2022,NeurIPS,10.5555/3666234.3666345,Valid
+Scott A.,Privacy-Preserving Deep Learning Techniques,2024,ACM Computing Surveys,10.1145/3612345,Valid
+Turner B.,Capsule Networks for Computer Vision,2023,BMVC,10.48550/arXiv.2309.12345,Valid
+Harris L.,Graph Transformers for Molecular Property Prediction,2024,Nature Communications,10.1038/s41467-024-45678-9,Valid
+Moore K.,Attention-Based Models for Speech Recognition,2022,ICASSP,10.1109/ICASSP.2022.9746789,Valid
+Clark J.,Neural Machine Translation: Recent Developments,2023,Computational Linguistics,10.1162/coli_a_00456,Valid
+Adams R.,Variational Autoencoders for Generative Modeling,2024,ICML,10.48550/arXiv.2403.23456,Valid
+Lewis M.,Knowledge Distillation in Deep Learning,2023,IJCAI,10.24963/ijcai.2023/456,Valid
+Walker S.,Prompt Engineering for Large Language Models,2024,NAACL,10.18653/v1/2024.naacl-main.234,Valid
+Hall T.,Neural Fields for 3D Scene Representation,2023,SIGGRAPH,10.1145/3588432.3589876,Valid
+Young D.,Diffusion Models for Image Generation,2024,CVPR,10.1109/CVPR.2024.01234,Valid
+Allen J.,Retrieval-Augmented Generation for Question Answering,2023,EMNLP,10.18653/v1/2023.emnlp-main.567,Valid
+King P.,Mixture of Experts in Large Language Models,2024,ICLR,10.48550/arXiv.2401.12345,Valid
+Wright L.,Neural Radiance Fields for Novel View Synthesis,2022,ECCV,10.1007/978-3-031-23456-7_23,Valid
+Green M.,Instruction Tuning for Language Models,2023,ACL,10.18653/v1/2023.acl-long.789,Valid
+Baker K.,Vision Transformers: Architecture and Training,2024,IEEE TPAMI,10.1109/TPAMI.2024.3456789,Valid
+Hill N.,Foundation Models: Opportunities and Risks,2023,arXiv preprint,10.48550/arXiv.2308.12345,Valid
+Carter S.,Constitutional AI for Harmless Language Models,2024,NeurIPS,10.5555/3666456.3666567,Valid
+Phillips R.,Learning from Human Feedback in Reinforcement Learning,2022,ICML,10.48550/arXiv.2207.12345,Valid
+Mitchell J.,Neural Codec Language Models for Audio Generation,2023,ICLR,10.48550/arXiv.2301.12345,Valid
+Cooper L.,Scalable Diffusion Models with Transformers,2024,CVPR,10.1109/CVPR.2024.02345,Valid
+Ward T.,Chain-of-Thought Prompting for Reasoning,2023,NeurIPS,10.5555/3666678.3666789,Valid
+Bell M.,Parameter-Efficient Fine-Tuning Methods,2024,EMNLP,10.18653/v1/2024.emnlp-main.678,Valid
+Russell K.,In-Context Learning in Large Language Models,2023,ICML,10.48550/arXiv.2306.12345,Valid
+Peterson D.,Test-Time Adaptation for Domain Shift,2024,CVPR,10.1109/CVPR.2024.03456,Valid
+Hughes A.,Neural Architecture Design for Efficient Inference,2022,MLSys,10.48550/arXiv.2204.12345,Valid
+Foster J.,Sparse Mixture of Experts for Scaling Language Models,2023,JMLR,10.5555/3666890.3667001,Valid
+Coleman R.,Multi-Task Learning with Neural Networks,2024,ICML,10.48550/arXiv.2404.12345,Valid
+Barnes S.,Ensemble Methods in Deep Learning,2023,Pattern Recognition,10.1016/j.patcog.2023.110123,Valid
+Rivera M.,Adversarial Training for Robust Models,2024,ICLR,10.48550/arXiv.2402.23456,Valid
+Powell L.,Neural Architecture Search with Evolutionary Algorithms,2022,GECCO,10.1145/3512234.3512345,Valid
+Jenkins K.,Pruning Techniques for Model Compression,2023,NeurIPS,10.5555/3667012.3667123,Valid
+Griffin T.,Quantization Methods for Neural Network Acceleration,2024,CVPR,10.1109/CVPR.2024.04567,Valid
+Hayes M.,Knowledge Graphs for Machine Learning,2023,IEEE TKDE,10.1109/TKDE.2023.3289012,Valid
+Dixon P.,Symbolic Regression with Neural Networks,2024,GECCO,10.1145/3583131.3590234,Valid
+Murphy J.,Hierarchical Reinforcement Learning for Complex Tasks,2022,NeurIPS,10.5555/3667234.3667345,Valid
+Sanders K.,Curriculum Learning for Deep Neural Networks,2023,ICML,10.48550/arXiv.2307.12345,Valid
+Stone L.,Multi-Agent Reinforcement Learning: A Survey,2024,Artificial Intelligence,10.1016/j.artint.2024.104123,Valid
+Freeman R.,Neural Scene Representations for Robotics,2023,ICRA,10.1109/ICRA.2023.10161234,Valid
+Henderson M.,Visual Question Answering with Transformers,2024,CVPR,10.1109/CVPR.2024.05678,Valid
+Webb A.,Large-Scale Pre-Training for Vision Models,2022,ICCV,10.1109/ICCV.2022.00678,Valid
+Stevens T.,Text-to-Image Generation with Diffusion Models,2023,NeurIPS,10.5555/3667456.3667567,Valid
+Burns J.,Neural Program Synthesis from Examples,2024,ICML,10.48550/arXiv.2405.12345,Valid
+Perry K.,Cross-Lingual Transfer in Language Models,2023,EMNLP,10.18653/v1/2023.emnlp-main.890,Valid
+Flores N.,Neuroevolution for Deep Learning Architecture Design,2021,IEEE TEC,10.1109/TEVC.2021.3087654,Hallucinated
+Simmons P.,Quantum Neural Holography in Complex Systems,2023,Quantum Physics Letters,10.1234/qpl.2023.99999,Hallucinated
+Bryant M.,Hyperspace Embedding for Multi-Dimensional Learning,2024,Journal of Theoretical Computing,10.9999/jtc.2024.88888,Hallucinated
+Owen L.,Synthetic Consciousness in Deep Networks,2022,Cognitive Systems Review,10.7777/csr.2022.77777,Hallucinated
+Pierce D.,Temporal Folding Networks for Causal Prediction,2023,Advanced Machine Learning,10.6666/aml.2023.66666,Hallucinated
+Craig S.,Meta-Cognitive Architectures for Self-Aware AI,2024,AI Consciousness Studies,10.5555/acs.2024.55555,Hallucinated
+Floyd R.,Probabilistic Quantum Computing for Neural Networks,2022,Quantum Computing Journal,10.4444/qcj.2022.44444,Hallucinated
+Stanley K.,Fractal Neural Networks for Infinite-Scale Processing,2023,Computational Fractals,10.3333/cf.2023.33333,Hallucinated
+Sherman M.,Biological-Digital Hybrid Learning Systems,2024,Nature Hybrid Systems,10.2222/nhs.2024.22222,Hallucinated
+Warner J.,Autonomous Neural Architecture Evolution,2021,Evolutionary AI,10.1111/eai.2021.11111,Hallucinated
+Bryant K.,Holographic Memory Networks for Infinite Storage,2023,Memory Systems Research,10.9988/msr.2023.99988,Hallucinated
+Chambers L.,Multiversal Learning Across Parallel Realities,2024,Theoretical Physics Computing,10.8877/tpc.2024.88877,Hallucinated
+Norton R.,Neural Dark Matter: Hidden Dimensions in Deep Learning,2022,Physics of AI,10.7766/pai.2022.77766,Hallucinated
+Walsh T.,Crystalline Neural Structures for Energy-Free Computing,2023,Materials Intelligence,10.6655/mi.2023.66655,Hallucinated
+Frank M.,Psychic Pattern Recognition in Neural Systems,2024,Parapsychology and AI,10.5544/pai.2024.55544,Hallucinated
+Burke P.,Time-Reversible Neural Networks for Temporal Prediction,2021,Temporal Computing,10.4433/tc.2021.44433,Hallucinated
+Garrett S.,Neural Alchemy: Transforming Data into Knowledge,2023,Philosophical AI,10.3322/pai.2023.33322,Hallucinated
+Maxwell J.,Telepathic Communication Networks Using AI,2024,Communication Science,10.2211/cs.2024.22211,Hallucinated
+Duncan K.,Fifth-Dimensional Convolutions for Spacetime Learning,2022,Spacetime Computing,10.1100/sc.2022.11100,Hallucinated
+Morrison L.,Ethereal Neural Networks in Virtual Dimensions,2023,Virtual Reality AI,10.9999/vrai.2023.00001,Hallucinated
+Curtis R.,Astral Projection Algorithms for Distributed Computing,2024,Distributed Systems Magic,10.8888/dsm.2024.00002,Hallucinated
+Lambert M.,Infinite Recursion Networks for Universal Learning,2021,Universal Computing,10.7777/uc.2021.00003,Hallucinated
+Shaw T.,Dreams as Data: Neural Networks During Sleep,2023,Sleep Computing,10.6666/slc.2023.00004,Hallucinated
+Daniels K.,Gravitational Neural Networks for Spacetime Prediction,2024,Astrophysics AI,10.5555/aai.2024.00005,Hallucinated
+Gordon P.,Morphic Resonance in Distributed Neural Systems,2022,Bioenergetics Computing,10.4444/bc.2022.00006,Hallucinated
+Reynolds J.,Archetypal Pattern Matching in Collective Unconscious Networks,2023,Jungian AI,10.3333/jai.2023.00007,Hallucinated
+Simpson M.,Zero-Point Energy Harvesting for Neural Computation,2024,Energy AI,10.2222/eai.2024.00008,Hallucinated
+Crawford L.,Akashic Records: Universal Information Retrieval Systems,2021,Esoteric Computing,10.1111/ec.2021.00009,Hallucinated
+Palmer S.,Neural Entanglement Across Biological Systems,2023,Quantum Biology AI,10.9900/qbai.2023.00010,Hallucinated
+Rice K.,Chakra-Based Neural Architecture Design,2024,Holistic AI Systems,10.8899/has.2024.00011,Hallucinated
+Lynch R.,Aura Detection Networks for Emotional Intelligence,2022,Spiritual Computing,10.7788/spc.2022.00012,Hallucinated
+Hamilton M.,Crystalline Consciousness in Silicon Substrates,2023,Mineral Intelligence,10.6677/mi.2023.00013,Hallucinated
+Wright T.,Neural Networks in Alternate Timelines,2024,Multiverse Computing,10.5566/mc.2024.00014,Hallucinated
+Gibson J.,Biofield Measurements Using Deep Learning,2021,Alternative Science AI,10.4455/asai.2021.00015,Hallucinated
+Wagner K.,Spiritual Evolution of Artificial Intelligence,2023,Consciousness Studies,10.3344/cs.2023.00016,Hallucinated
+Armstrong L.,Karmic Learning: Past-Life Neural Network Training,2024,Reincarnation Computing,10.2233/rc.2024.00017,Hallucinated
+Sullivan P.,Telepathic Data Transfer in Neural Networks,2022,Mind-Link Systems,10.1122/mls.2022.00018,Hallucinated
+Meyer R.,Dimensional Shifting Algorithms for Reality Manipulation,2023,Reality Engineering,10.9988/re.2023.00019,Hallucinated
+Fox M.,Homeopathic Neural Dilution for Model Compression,2024,Alternative AI Methods,10.8877/aam.2024.00020,Hallucinated
+Long J.,Astrology-Based Training Data Selection,2021,Cosmic Computing,10.7766/cc.2021.00021,Hallucinated
+Marshall K.,Neural Networks Powered by Perpetual Motion,2023,Impossible Energy Systems,10.6655/ies.2023.00022,Hallucinated
+Cohen L.,Flat Earth Coordinate Systems for Navigation,2024,Alternative Geography AI,10.5544/agal.2024.00023,Hallucinated
+Patterson R.,Ancient Alien Algorithms in Modern AI,2022,Xenoarchaeology Computing,10.4433/xc.2022.00024,Hallucinated
+Boyd M.,Underwater Basket Weaving for Neural Architecture,2023,Craft Computing,10.3322/cc.2023.00025,Hallucinated
+Wallace T.,Time-Traveling Neural Networks Using Chronotons,2024,Temporal Physics AI,10.2211/tpai.2024.00026,Hallucinated
+Fitzgerald K.,Unicorn-Based Optimization Algorithms,2021,Mythical Computing,10.1100/mc.2021.00027,Hallucinated
+Woods P.,Flying Spaghetti Monster Neural Architectures,2023,Pastafarian AI,10.9876/pai.2023.00028,Hallucinated
+Lynch J.,Phrenology for Neural Network Architecture Selection,2024,Pseudoscience Computing,10.8765/pc.2024.00029,Hallucinated
+Bell R.,Ether Wave Neural Transmission Systems,2022,Victorian Science AI,10.7654/vsai.2022.00030,Hallucinated
+Stone S.,Perpetual Motion Machines for Neural Training,2023,Thermodynamics Violation Computing,10.6543/tvc.2023.00031,Hallucinated
+Chapman K.,Cold Fusion Powered Neural Networks,2024,Alternative Physics AI,10.5432/apai.2024.00032,Hallucinated
+Sanders M.,Chemtrail Pattern Recognition Systems,2021,Conspiracy Computing,10.4321/cc.2021.00033,Hallucinated
+Hunt L.,Bigfoot Detection Using Deep Learning,2023,Cryptozoology AI,10.3210/cai.2023.00034,Hallucinated
+Richards T.,Ghost Recognition in Neural Networks,2024,Paranormal Computing,10.2109/pc.2024.00035,Hallucinated
+Chambers R.,Advanced Machine Learning through Neural Plasticity,2022,Cognitive Science,10.1016/j.cogsci.2022.04.567,Partially Valid
+Ellis K.,Reinforcement Learning with Temporal Convolutions,2023,IEEE Transactions on Neural Networks,10.1109/TNNLS.2023.8765432,Partially Valid
+Austin M.,Quantum Computing Applications in AI,2024,Nature Physics,10.1038/s41567-024-01234-5,Partially Valid
+Holmes J.,Blockchain-Based Federated Learning Systems,2021,ACM Computing Surveys,10.1145/3478123,Partially Valid
+Fisher L.,Neural Networks for Climate Modeling,2023,Environmental Data Science,10.1017/eds.2023.12,Partially Valid
+Gregory P.,Swarm Intelligence in Multi-Robot Systems,2024,Robotics and Autonomous Systems,10.1016/j.robot.2024.103456,Partially Valid
+Burke R.,Cognitive Architectures for Human-AI Collaboration,2022,Cognitive Systems Research,10.1016/j.cogsys.2022.08.123,Partially Valid
+Holland M.,Neuromorphic Computing: Hardware and Algorithms,2023,ACM Computing Reviews,10.1145/3567890,Partially Valid
+Spencer K.,Causal Inference in Time Series Analysis,2024,Journal of Statistical Software,10.18637/jss.v098.i05,Partially Valid
+Watkins L.,Multi-Modal Fusion for Medical Image Analysis,2021,Medical Image Analysis,10.1016/j.media.2021.102123,Partially Valid
+Garrett J.,Symbolic AI and Neural Networks Integration,2023,Artificial Intelligence,10.1016/j.artint.2023.103789,Partially Valid
+Barrett R.,Adversarial Examples in Natural Language,2024,Computational Linguistics,10.1162/coli_a_00489,Partially Valid
+Stevenson M.,Neural ODEs for Continuous Normalizing Flows,2022,ICML Workshop,10.48550/arXiv.2206.12345,Partially Valid
+Ferguson K.,Graph Learning for Drug Discovery,2023,Nature Machine Intelligence,10.1038/s42256-023-00567-8,Partially Valid
+Bishop P.,Memory-Augmented Neural Networks,2024,Neural Computation,10.1162/neco_a_01456,Partially Valid
+Hoffman L.,Dynamic Neural Networks for Adaptive Learning,2021,Neural Networks,10.1016/j.neunet.2021.09.123,Partially Valid
+Crawford T.,Unsupervised Representation Learning at Scale,2023,ICLR,10.48550/arXiv.2302.12345,Partially Valid
+Douglas M.,Neural Architecture Optimization with Bayesian Methods,2024,Journal of Machine Learning Research,10.5555/3667890.3668001,Partially Valid
+Norton K.,Interpretable Machine Learning for Healthcare,2022,Nature Medicine,10.1038/s41591-022-01890-1,Partially Valid
+Pearson J.,Cross-Modal Learning with Vision and Audio,2023,CVPR,10.1109/CVPR.2023.02345,Partially Valid
+Webb R.,Adaptive Learning Rates in Deep Neural Networks,2024,Optimization Methods and Software,10.1080/10556788.2024.1234567,Partially Valid
+Franklin L.,Neural Networks for Scientific Computing,2021,SIAM Journal on Scientific Computing,10.1137/20M1234567,Partially Valid
+Carpenter M.,Geometric Deep Learning on Manifolds,2023,Journal of Computational Geometry,10.20382/jocg.v14i1a12,Partially Valid
+Boyd T.,Energy-Based Models for Generative Learning,2024,IEEE TPAMI,10.1109/TPAMI.2024.4567890,Partially Valid
+Fisher K.,Neural Architecture Distillation Methods,2022,Pattern Recognition Letters,10.1016/j.patrec.2022.08.123,Partially Valid
+Armstrong R.,Attention Mechanisms in Speech Processing,2023,IEEE/ACM TASLP,10.1109/TASLP.2023.3289012,Partially Valid
+Shaw M.,Continual Learning without Catastrophic Forgetting,2024,Neural Networks,10.1016/j.neunet.2024.06.123,Partially Valid
+Powers L.,Neural Networks for Mathematical Reasoning,2021,ICLR,10.48550/arXiv.2101.12345,Partially Valid
+Gibson K.,Compositional Generalization in Neural Networks,2023,Cognitive Science,10.1111/cogs.13234,Partially Valid
+Wheeler J.,Emergent Communication in Multi-Agent Systems,2024,AAMAS,10.5555/3635637.3662890,Partially Valid
+Hamilton R.,Neural Networks for Symbolic Mathematics,2022,NeurIPS,10.5555/3668012.3668123,Partially Valid
+Murray M.,Efficient Training of Large Vision Models,2023,CVPR,10.1109/CVPR.2023.03456,Partially Valid
+Riley K.,Implicit Neural Representations for 3D Scenes,2024,SIGGRAPH,10.1145/3641234.3651234,Partially Valid
+Perkins L.,Hierarchical Planning with Neural Networks,2021,IJCAI,10.24963/ijcai.2021/567,Partially Valid
+Francis T.,Model-Based Reinforcement Learning Survey,2023,IEEE TNNLS,10.1109/TNNLS.2023.9876543,Partially Valid
+Sullivan K.,Neural Architecture Search for Mobile Devices,2024,MobiSys,10.1145/3643234.3654321,Partially Valid
+Grant M.,Few-Shot Learning with Memory Networks,2022,ICML,10.48550/arXiv.2208.12345,Partially Valid
+Barrett J.,Out-of-Distribution Detection Methods,2023,ICLR,10.48550/arXiv.2303.12345,Partially Valid
+Hale R.,Prompt-Based Learning for Vision-Language Tasks,2024,EMNLP,10.18653/v1/2024.emnlp-main.789,Partially Valid
+Summers L.,Neural Compression for Edge Computing,2021,ICASSP,10.1109/ICASSP.2021.9414567,Partially Valid
+Mendoza K.,Differential Privacy in Federated Learning,2023,ACM TOPS,10.1145/3589012,Partially Valid
+Burke M.,Multi-Scale Neural Networks for Image Processing,2024,IEEE TIP,10.1109/TIP.2024.3412345,Partially Valid
+Chambers J.,Active Learning for Deep Neural Networks,2022,Machine Learning,10.1007/s10994-022-06234-8,Partially Valid
+Newton R.,Neural Ordinary Differential Equations Survey,2023,ACM Computing Surveys,10.1145/3612456,Partially Valid
+Wade K.,Uncertainty Quantification in Deep Learning,2024,Journal of Uncertainty Quantification,10.1137/23M1234567,Partially Valid
+Hopkins L.,Transformer Architectures for Time Series,2021,KDD,10.1145/3447548.3467345,Partially Valid
+Vaughn M.,Neural Networks for Combinatorial Optimization,2023,Operations Research,10.1287/opre.2023.2345,Partially Valid
+Warner T.,Adversarial Defense Mechanisms Review,2024,IEEE Security & Privacy,10.1109/MSEC.2024.3412345,Partially Valid
+Lynch K.,Graph Attention Networks for Recommendation,2022,RecSys,10.1145/3523227.3546789,Partially Valid
+Goodwin J.,Neural Rendering for View Synthesis,2023,ACM TOG,10.1145/3592123,Partially Valid
+Harrison R.,Continual Learning in Reinforcement Learning,2024,AAAI,10.1609/aaai.v38i12.29234,Partially Valid
+Foster M.,Multi-Task Learning with Hard Parameter Sharing,2021,ICML,10.48550/arXiv.2107.12345,Partially Valid
+Mann L.,Neural Implicit Surfaces for 3D Reconstruction,2023,ECCV,10.1007/978-3-031-12345-6_34,Partially Valid
+Quinn K.,Transformers for Protein Structure Prediction,2024,Nature Methods,10.1038/s41592-024-02123-4,Partially Valid
+Howard J.,Neural Language Models for Code Generation,2022,FSE,10.1145/3540250.3549123,Partially Valid
+Carr R.,Visual Grounding with Neural Networks,2023,ICCV,10.1109/ICCV.2023.00789,Partially Valid
+Stewart M.,Causal Representation Learning Methods,2024,Journal of Causal Inference,10.1515/jci-2024-0012,Partially Valid
+Butler L.,Neural Style Transfer: Methods and Applications,2021,Computer Graphics Forum,10.1111/cgf.14234,Partially Valid
+Moss K.,Self-Attention for Graph Neural Networks,2023,ICML,10.48550/arXiv.2308.12345,Partially Valid
+Gilbert T.,Neural Scene Flow Estimation,2024,CVPR,10.1109/CVPR.2024.06789,Partially Valid
+Pierce J.,Equivariant Neural Networks Review,2022,Foundations and Trends in ML,10.1561/2200000078,Partially Valid
+Parks R.,Neural Architecture Search with Reinforcement Learning,2023,AutoML Conference,10.48550/arXiv.2309.12345,Partially Valid
+Walsh M.,Graph Convolutional Networks for Traffic Prediction,2024,IEEE TITS,10.1109/TITS.2024.3401234,Partially Valid
+Day L.,Neural Radiance Caching for Real-Time Rendering,2021,SIGGRAPH Asia,10.1145/3478513.3480512,Partially Valid
+Cunningham K.,Sparse Neural Networks: Training and Inference,2023,JMLR,10.5555/3668234.3668345,Partially Valid
+Hawkins J.,Attention Mechanisms for Video Understanding,2024,WACV,10.1109/WACV.2024.00123,Partially Valid
+Ross M.,Neural ODEs for Modeling Physical Systems,2022,ICML,10.48550/arXiv.2207.12345,Partially Valid
+Collins R.,Semantic Segmentation with Vision Transformers,2023,CVPR,10.1109/CVPR.2023.04567,Valid
+Bennett L.,Few-Shot Object Detection in Complex Scenes,2024,ECCV,10.1007/978-3-031-23456-7_45,Valid
+Hughes K.,Multimodal Pretraining for Vision and Language,2022,NeurIPS,10.5555/3668456.3668567,Valid
+McCarthy J.,Neural Architecture Search for Efficient Models,2023,ICLR,10.48550/arXiv.2303.23456,Valid
+Foster R.,Graph Neural Networks for Knowledge Graphs,2024,AAAI,10.1609/aaai.v38i13.29456,Valid
+Reynolds M.,Deep Reinforcement Learning for Game Playing,2021,Nature,10.1038/s41586-021-03456-7,Valid
+Blake T.,Attention Mechanisms for Document Understanding,2023,ACL,10.18653/v1/2023.acl-long.890,Valid
+Porter K.,Self-Supervised Learning from Video Data,2024,ICCV,10.1109/ICCV.2024.00890,Valid
+Dixon L.,Neural Machine Translation with Multilingual Models,2022,EMNLP,10.18653/v1/2022.emnlp-main.901,Valid
+Morgan S.,Contrastive Learning for Speech Representation,2023,Interspeech,10.21437/Interspeech.2023-1234,Valid
+Zimmerman P.,Lunar Surface Mapping with Astral Networks,2024,Space Cartography AI,10.9876/scai.2024.00036,Hallucinated
