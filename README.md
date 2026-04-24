@@ -4,7 +4,7 @@
 
 A robust hybrid pipeline for detecting hallucinated citations in academic papers and research documents. The system combines exact bibliographic lookup, fuzzy matching, and optional LLM verification to classify citations as valid, partially valid, or hallucinated.
 
-## Overview
+## Method
 
 Citation hallucination occurs when AI systems or automated tools generate plausible-looking but non-existent academic references. This pipeline provides a three-stage detection system:
 
