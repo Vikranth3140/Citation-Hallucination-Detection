@@ -1,5 +1,7 @@
 # Citation Hallucination Detection
 
+[![AAAI 2026](https://img.shields.io/badge/AAAI-2026-blue)](https://doi.org/10.1609/aaai.v40i48.42257)
+
 A robust hybrid pipeline for detecting hallucinated citations in academic papers and research documents. The system combines exact bibliographic lookup, fuzzy matching, and optional LLM verification to classify citations as valid, partially valid, or hallucinated.
 
 ## Overview
@@ -276,6 +278,23 @@ python -c "from rapidfuzz import fuzz; from rank_bm25 import BM25Okapi; print('D
 - **Batch processing**: Process citations in chunks for better error recovery
 - **Caching**: Consider caching API responses for repeated queries
 - **Parallel processing**: Implement multiprocessing for large datasets
+
+## Citation
+
+If you use or build upon this work, please consider citing:
+
+```bibtex
+@inproceedings{misra2026detecting,
+  author    = {Misra, N. and Udandarao, V.},
+  title     = {Detecting Citation Hallucinations in Large Language Model Outputs (Student Abstract)},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume    = {40},
+  number    = {48},
+  pages     = {41325--41327},
+  year      = {2026},
+  doi       = {10.1609/aaai.v40i48.42257}
+}
+```
 
 ## License
 
